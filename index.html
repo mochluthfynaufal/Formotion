@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Formation Studio – Perencana Formasi Tari</title>
+  <meta name="description" content="Formation Studio – Aplikasi perencana formasi tari, koreografi, dan baris-berbaris interaktif.">
+  <meta name="theme-color" content="#C8102E">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- ── Panel Kiri ── -->
+    <aside class="pn" id="L">
+
+      <!-- Area Logo Ambalan (Permanen / Statis) -->
+      <div class="logo-area">
+        <img id="logoImg" src="assets/logo.png" alt="Logo Ambalan" draggable="false">
+      </div>
+
+      <!-- Konten panel kiri — dirender oleh rLeft() -->
+      <div id="Lc"></div>
+
+    </aside>
+
+    <!-- ── Panel Tengah (Panggung) ── -->
+    <main class="pn" id="C">
+      <div class="tb">
+        <button onclick="zoom(.8)" title="Perbesar">＋</button>
+        <button onclick="zoom(1.25)" title="Perkecil">－</button>
+        <button onclick="resetView()">Reset Tampilan</button>
+        <button id="bg" onclick="tog('grid')">Kisi</button>
+        <button id="bs" onclick="tog('snap')">Snap</button>
+        <button id="bp" onclick="tog('showPaths')">Jalur Gerak</button>
+        <span class="sp"></span>
+        <span id="sv">Tersimpan</span>
+        <button onclick="undoA()" title="Ctrl+Z">↶ Undo</button>
+        <button onclick="redoA()" title="Ctrl+Y">↷ Redo</button>
+      </div>
+      <div id="sw"><svg id="svg"></svg></div>
+    </main>
+
+    <!-- ── Panel Kanan ── -->
+    <aside class="pn" id="R"></aside>
+
+    <!-- ── Timeline ── -->
+    <section class="pn" id="B">
+      <div class="ctl" id="ctl"></div>
+      <div id="tl"></div>
+    </section>
+
+  </div>
+
+  <input type="file" id="imp" accept=".json" hidden>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
